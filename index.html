@@ -65,9 +65,10 @@
 	</div>
 	
 	
-	<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
-	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=hNwsSIXFOPTIQQuze00VDuYydoIXgAFF"></script>
+	<!-- <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script> -->
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=OQCHequbkUAIoT60YTg1riQcGxsC6ubH"></script>
 	<script type="text/javascript">
+		var city
 		// 百度地图API功能
 		var map = new BMap.Map("allmap");
 		var point = new BMap.Point(116.331398,39.897445);
@@ -76,6 +77,7 @@
 		function myFun(result){
 			var cityName = result.name;
 			map.setCenter(cityName);
+			city = cityName;
 			alert("当前定位城市:"+cityName);
 		}
 		var myCity = new BMap.LocalCity();

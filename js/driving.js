@@ -9,7 +9,7 @@ var $back = $("#back");
 var $srcTip = $('#srcTip');
 var $desTip = $('#desTip');
 var ak = 'hNwsSIXFOPTIQQuze00VDuYydoIXgAFF';
-var city = remote_ip_info['city'];
+// var city = remote_ip_info['city'];
 $('#city').html(city);
 
 $back.click(function () {
@@ -50,7 +50,7 @@ $des.on('blur',function () {
 })
 
 function getTotalPlace(place,placeCity,$wrap,cb) {
-	var url = 'http://api.map.baidu.com/place/v2/suggestion?query='+place+'&region='+placeCity+'&city_limit=true&output=json&ak=' + ak;
+	var url = 'https://api.map.baidu.com/place/v2/suggestion?query='+place+'&region='+placeCity+'&city_limit=true&output=json&ak=' + ak;
 	$.getJSON(url + '&callback=?')
 	.done(function (res) {
 		if (res.status === 0) {
@@ -81,7 +81,7 @@ function appendList($wrap,result) {
 }
 // 获取路程信息
 function getRoute(begin,end,beginCity,endCity,cb) {
-	var url = 'http://api.map.baidu.com/direction/v1?mode=driving&origin='+begin+'&destination='+end+'&origin_region='+beginCity+'&destination_region='+endCity+'&output=json&ak='+ak;    
+	var url = 'https://api.map.baidu.com/direction/v1?mode=driving&origin='+begin+'&destination='+end+'&origin_region='+beginCity+'&destination_region='+endCity+'&output=json&ak='+ak;    
     $.getJSON(url + '&callback=?')
     .done(function (res) {
         if (res.status === 0) {
