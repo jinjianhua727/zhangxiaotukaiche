@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>张小兔开车</title>
 	<meta name="description" content="注意安全">
-	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/driving.css">
 	<link rel="shortcut icon" href="./zhangxiaotu.ico">
 </head>
@@ -66,7 +66,22 @@
 	
 	
 	<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
-	<script src="http://cdn.staticfile.org/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=hNwsSIXFOPTIQQuze00VDuYydoIXgAFF"></script>
+	<script type="text/javascript">
+		// 百度地图API功能
+		var map = new BMap.Map("allmap");
+		var point = new BMap.Point(116.331398,39.897445);
+		map.centerAndZoom(point,12);
+
+		function myFun(result){
+			var cityName = result.name;
+			map.setCenter(cityName);
+			alert("当前定位城市:"+cityName);
+		}
+		var myCity = new BMap.LocalCity();
+		myCity.get(myFun);
+	</script>
+	<script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 	<script src="js/driving.js"></script>
 </body>
 </html>
