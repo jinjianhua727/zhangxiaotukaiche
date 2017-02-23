@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>张小兔开车</title>
+	<meta name="description" content="注意安全">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/driving.css">
+	<link rel="shortcut icon" href="./zhangxiaotu.ico">
+</head>
+<body>
+	<div id="container" class="container">
+		<div class="page1">
+			<form class="center form-inline">
+				<h3 class="text-center ">当前城市：<span id="city"></span></h3>
+				<div class="form-group ">
+					<!-- <div><p class="text-center">起点1</p></div> -->
+					<div>	
+						<div class="">
+							<div class="col-xs-4">
+								<select id="srcCity" class="form-control ">
+									<option value="北京" >北京</option>
+									<option value="廊坊" checked>廊坊</option>
+									<option value="沧州">沧州</option>
+									<option value="天津">天津</option>
+								</select>
+							</div>
+							<div class="col-xs-8">
+								<input type="text" class="form-control " id="src" value="" placeholder="输入起点，如大厂">
+								<div id="srcTip" class="place-tip"></div>
+							</div>
+					    	
+					    </div>
+					</div>
+					
+				</div>
+				<div class="form-group " >
+					<!-- <div ><p class="text-center">终点</p></div> -->
+					<div>	
+						<div >
+							<div class="col-xs-4" style="padding-top: 20px;padding-bottom: 20px;">
+								<select id="desCity" class="form-control ">
+									<option value="北京" checked>北京</option>
+									<option value="廊坊">廊坊</option>
+									<option value="沧州">沧州</option>
+									<option value="天津">天津</option>
+								</select>
+							</div>
+							<div class="col-xs-8" style="padding-top: 20px;padding-bottom: 20px;">
+								<input type="text" class="form-control" id="des" value="" placeholder="输入终点，如育新">
+								<div id="desTip" class="place-tip"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="text-center"><button class="btn btn-success" type="button" id="search">查询</button></p>
+			</form>
+		</div>
+
+		<div class="result-wrap page2">
+			<p><button type="button" id="back" class="btn btn-danger">返回</button></p>
+			<div id="result"></div>
+		</div>
+	</div>
+	
+	
+	<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+	<script src="http://cdn.staticfile.org/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/driving.js"></script>
+</body>
+</html>
