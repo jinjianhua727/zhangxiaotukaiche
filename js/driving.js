@@ -9,8 +9,9 @@ var $back = $("#back");
 var $srcTip = $('#srcTip');
 var $desTip = $('#desTip');
 var ak = 'hNwsSIXFOPTIQQuze00VDuYydoIXgAFF';
+var city;
 // var city = remote_ip_info['city'];
-$('#city').html(city);
+// $('#city').html(city);
 
 $back.click(function () {
 	$container.removeClass("active")
